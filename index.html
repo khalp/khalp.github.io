@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta name="google-signin-client_id" content="596053217994-esmn9r8o68045da675jk4k5j7pc3ecfc.apps.googleusercontent.com">
   <title>Demo Login</title>
   <style>
   body {
@@ -78,7 +79,32 @@
       <input type="password" placeholder="Enter Password" name="pass">
       <br/>
       <br/>
-      <button type="submit" name="submit" value="Login">Login</button>
+
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script>
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('Name: ' + profile.getName());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      }
+      function onFailure(error) {
+        console.log(error);
+      }
+      function renderButton() {
+        gapi.signin2.render('my-signin2', {
+          'scope': 'profile email',
+          'width': 240,
+          'height': 50,
+          'longtitle': true,
+          'theme': 'dark',
+          'onsuccess': onSuccess,
+          'onfailure': onFailure
+        });
+      }
+      </script>
+
+      <!-- <button type="submit" name="submit" value="Login">Login</button> -->
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
