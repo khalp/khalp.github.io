@@ -84,11 +84,16 @@
       <br/>
       <br/>
 
-      <form method="post" action="menu.html">
+      <form method="post" onsubmit="redirect">
         <button type="submit" name="submit" value="Login">Login</button>
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
+        <script>
+          function redirect() {
+            window.location = "menu.html";
+          }
+        </script>
       </form>
       <br/>
 
@@ -103,7 +108,6 @@
           console.log('Family Name: ' + profile.getFamilyName());
           console.log("Image URL: " + profile.getImageUrl());
           console.log("Email: " + profile.getEmail());
-
           window.location = "menu.html";
           /* TODO: only vt emails */
         }
