@@ -1,66 +1,89 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>Drop-Down Menu</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#dialog" ).dialog();
-  } );
-  </script>
+  <title>Menu</title>
   <style>
-    nav {
-      font-weight: bold;
-      color: White;
-      background-color: royalblue;
-      border-width: 2px;
-      border-style: solid;
-      border-color: royalblue;
-      width: 10em;
-      text-align: center;
-    }
-    nav ul {
-      display: none;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    nav:hover ul {
-      display: block;
-    }
-    nav ul li {
-      background-color: White;
-      color: black;
-      border-top: 2px solid royalblue;
-    }
-    nav ul li:hover {
-      background-color: powderblue;
-      font-style: italic;
-    }
-  </style>
-  <script>
-  function myFunction() {
-    alert("Hello! I am an alert box!","The");
+  body {
+    background-color: rgb(209, 209, 209);
   }
-  </script>
+
+
+
+  button {
+    background-color: #8a0032;
+    margin: auto;
+    color: white;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: candara;
+    width: 300px;
+    font-size: 150%;
+    display: block;
+    margin-bottom:15px;
+    border-radius: 10px;
+    text-align: center;
+
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+
+
+  .container1 {
+    margin-top: 50px;
+    padding: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container2 {
+    margin-top: 40px;
+    padding: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  label {
+    margin-top: 50px;
+    font-family: candara;
+    font-size: 40px;
+    font-weight: bold;
+    color: #696969;
+  }
+
+
+
+  </style>
 </head>
 <body>
-
-  <nav>Menu
-    <ul>
-      <li><a href="#">Home</a></li>
-
-      <li><a href="#">News</a></li>
-      <li><a href="#">Articles</a></li>
-      <li onclick="myFunction()"><a href="#">Blog</a></li>
-
-      <!-- <button onclick="myFunction()">Try it</button> -->
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+    <div class="container2">
+      <label>Choose a Location: </label>
+    </div>
+    <div class="container1">
+      <form method="post" action="turners.html">
+        <button type="turners" name="turners" value="Turners">Turner's Place</button>
+      </form>
+      <form method="post" action="newman.html">
+        <button type="newman" name="neman" value="Neman">Newman Library</button>
+      </form>
+      <form method="post" action="goodwin.html">
+        <button type="goodwin" name="goodwin" value="Goodwin">Goodwin Hall</button>
+      </form>
+      <form method="post" action="westend.html">
+        <button type="westend" name="westend" value="westend">West End</button>
+      </form>
+      <form method="post" action="mccomas.html">
+        <button type="mccomas" name="mccomas" value="mccomas">McComas</button>
+      </form>
+      <form method="post" action="cslounge.html">
+        <button type="cslounge" name="cslounge" value="cslounge">McBryde CS Lounge</button>
+      </form>
+    </div>
 </body>
 </html>
