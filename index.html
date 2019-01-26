@@ -92,7 +92,7 @@
       </form>
       <br/>
 
-      <div class="g-signin2" data-onsuccess="onSignIn" postmessage="https://khalp.github.io/menu.html">></div>
+      <div class="g-signin2" data-onsuccess="onSignIn">></div>
       <script src="https://apis.google.com/js/platform.js" async defer></script>
       <script>
         function onSignIn(googleUser) {
@@ -104,6 +104,7 @@
           console.log("Image URL: " + profile.getImageUrl());
           console.log("Email: " + profile.getEmail());
 
+          window.location = "menu.html";
           /* TODO: only vt emails */
         }
         function onFailure(error) {
